@@ -28,27 +28,41 @@ namespace SoldanoZoooo
         }
         public virtual double CalcolaCiboDiarioKg()
         {
-            return 0;  
+            return Peso / 100;  
         }
         public virtual double CalcolaCostoGestioneMensile()
         {
-            return 0;
+            return 100;
         }
-        public virtual double EmettiVerso()
+        public virtual string EmettiVerso()
         {
-            return 0;
+            return "l'animale emette un verso";
         }
-        public void AggiornaPeso(double nuovoPeso)
+        public void AggiornaPeso(int nuovoPeso)
         {
-            
+            if (Peso >= 0)
+            {
+                Peso = nuovoPeso;
+                CalcolaVariazionePesoPercentuale();
+                DeterminaStatoDiSalute();
+            }
+            else
+            {
+
+
+            }
         }
         public void EffettuaControlloVeterinario()
         {
             _numeroControlliVeterinario++;
         }
-        public virtual double MostraInformazioni()
+        public virtual string MostraInformazioni()
         {
-            return 0;
+            return "";
+        }
+        private void DeterminaStatoDiSalute()
+        {
+
         }
     }
 }
